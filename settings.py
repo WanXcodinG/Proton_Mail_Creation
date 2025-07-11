@@ -28,3 +28,9 @@ headers=['protonmail address', 'protonmail password', 'date and time']
 #Read email file
 used_emails='used_email.csv'
 
+# 2Captcha API Key - Ganti dengan API key Anda
+TWOCAPTCHA_API_KEY = "YOUR_2CAPTCHA_API_KEY_HERE"
+
+# 2Captcha timeout settings
+CAPTCHA_TIMEOUT = 300  # 5 minutes
+CAPTCHA_POLL_INTERVAL = 10  # Check every 10 seconds
