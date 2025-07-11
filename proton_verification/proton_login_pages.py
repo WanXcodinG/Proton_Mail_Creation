@@ -5,7 +5,7 @@ from proton_verification.base_selenium import BaseSelenium
 from settings import proton_login_address
 from bs4 import BeautifulSoup
 import re
-from common.save_in_file import File_handling
+from common.save_in_file import FileHandling
 from exceptions.possible_exceptions import GettingVerificationCodeException
 import settings
 
@@ -59,7 +59,7 @@ class Proton_login_pages(BaseSelenium):
                         print('Standard click failed in email trying alternative')
                         self.driver.execute_script("arguments[0].click();", target)
                     email_subject = self.wait.until(EC.presence_of_element_located((By.XPATH,'//h1[@data-testid="conversation-header:subject"]')))
-                    File_handling.one_line_write(settings.used_emails,email)
+                    FileHandling.one_line_write(settings.used_emails,email)
                     return self.get_text(email_subject.text)
             except Exception as exc:
                 print(f'Error Encountered\n {exc}')

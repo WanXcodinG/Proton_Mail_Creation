@@ -1,7 +1,7 @@
 import os
 import settings
 from common.get_choice import get_user_input, check_num
-from common.save_in_file import File_handling
+from common.save_in_file import FileHandling
 from pom_objects.protonmail_creation_pages import ProtonmailCreationPages
 
 
@@ -19,7 +19,7 @@ def text_menu():
             if save_in_file:
                 if not os.path.isfile(settings.filename):
                     print(f"Creating {settings.filename} for saving ProtonMail accounts...")
-                    file = File_handling(settings.filename,headers=settings.headers)
+                    file = FileHandling(settings.filename,headers=settings.headers)
                     file.create_new_file()
 
             print(f"How many accounts would you like to create? (min=1, max={settings.max_accounts_count})")

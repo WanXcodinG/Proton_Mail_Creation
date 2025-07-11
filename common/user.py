@@ -21,7 +21,7 @@ class User:
         self.email_interface.get_another_domain()
         
     def email_for_verification(self):
-        file= FileHandling(settings.filename,settings.headers)
+        file = FileHandling(settings.filename,settings.headers)
         used_mails = FileHandling.one_line_read(settings.used_emails)
         login_info = file.filter_data(used_mails)
         self.__proton_mail,self.__proton_pass = login_info[0]
